@@ -15,6 +15,7 @@ import app.Book;
 import app.Copy;
 import app.Item;
 import app.Magazine;
+import app.Member;
 import app.Reservation;
 
 public class ItemTest {
@@ -99,7 +100,10 @@ public class ItemTest {
 	@Test
 	public void borrowTest() {
 		
+		int loanCount =  item.countLoans();
 		
+		Member member =  new Member("123","Ashish","1000 n 4th st","6528211");
+		item.borrow(member );
 		
 	}
 
