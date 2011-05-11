@@ -9,6 +9,7 @@ import org.junit.Test;
 import app.Book;
 import app.Copy;
 import app.Item;
+import app.Loan;
 import app.Magazine;
 import app.Member;
 
@@ -21,7 +22,7 @@ public class MemberTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		member = new Member();
+		member = new Member("123","Ashish","1000 n 4th st","6528211");
 		String memberId = "1";
 		String name = "Rahul";
 		String address = "1000 N foutrh st.";
@@ -63,8 +64,17 @@ public class MemberTest {
 	}
 
 	@Test
-	public void reserveTest(Item item) {
+	public void addLoanTest(){
+		
+		int loanedCopies = member.listLoans().size();
+		member.addLoan(new Loan(member, copy));
+		int loanedCopiesNew =  member.listLoans().size();
+		
+		Assert.assertEquals(1, loanedCopiesNew - loanedCopies);
+		
+		
 		
 	}
+	
 
 }

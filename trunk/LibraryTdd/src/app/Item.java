@@ -62,4 +62,18 @@ public abstract class Item {
 		return count;
 	}
 
+	public void borrow(Member member) {
+		
+		for (Copy c : copies) {
+			if (c.isAvailable()) {
+				c.setAvailable(false);
+				Loan loan = new Loan(member,c);				
+				member.addLoan(loan);
+				c.addLoan(loan);
+				break;
+			}
+		}
+		
+	}
+
 }
