@@ -20,6 +20,7 @@ public class CopyTest {
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		copy = null;
 	}
 
 	@Test
